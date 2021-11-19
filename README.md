@@ -13,7 +13,7 @@
 
 + Auto update scrollbar, you don't have to do anything.
 
-+ Added support for scroll-y for only the body of the table. (Hold header)
++ Support for scroll-y for only the body of the table. (Hold header)
 
 ---
 
@@ -39,9 +39,9 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 
 ```js
         // tagName = 'div' wrapName='div'
-        // const [something1, setSomething1] = useState('') // <Component> 
-        <Scrollbar height="100px" effectData={something1}>
-            { something1 }
+        // something1 (..any, showHide, data2, data3)
+        <Scrollbar height="100px" effectData={something1...}>
+            { something1...  }
         </Scrollbar>
 ```
 
@@ -51,7 +51,6 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 
 ```js
         // const refScroll = useRef(null) // you handle scrollbars
-        // dosomthhing => refScroll.current.element.scrollTop = 0  || refScroll.current.update()
         <Scrollbar
             tagName="tbody" // tbody, ul, dl, ol
             maxHeight="400px"
@@ -65,6 +64,10 @@ import Scrollbar from 'react-perfect-scrollbar-z'
         </Scrollbar>
 ```
 
+```js
+// access scrollbar (your handler)
+refScroll.current.element.scrollTop = 0  || refScroll.current.update()
+```
 <br />
 
 ---
@@ -103,9 +106,9 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 
 #### Note
 
-+ tbody only `scroll-y` (no x).
++ tbody only `scroll-y` (no x).  You should not use maxWidth, width (default by table).
 
-+ If you want to update `scrollTop`, `scrollLeft`, using `document.querySelector(#id).scrollTop = 0`... or `refScroll`
++ Update `scrollTop`, `scrollLeft`, using `refScroll` || `document.querySelector(#id).scrollTop = 0`
 
 + `ul/ol/dl/tbody`. This is a special. (multi childs), so you shouldn't update the border for tagName.
 
@@ -119,11 +122,18 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 ```js
 <Scrollbar libTable={true}><CustomTag></CustomTag></Scrollbar>
 
-It will try to add the perfect scrollbar to the `tbody` of the `first` table found.
+It will try to add the perfect scrollbar to the `tbody` of the `first` table found. (Checking...)
 
-+ Some cases when you scroll to bottom and remove item data.
-=> It leaves empty space. It has check here.
 ```
+
++ you should use `ul/dl/ol` with basic
+```js
+    <Scrollbar effectData={abcd} .... > <ul> <for>...</for> </ul> <Scrollbar>
+```
+
++ Some cases (or other lib) when you scroll to bottom and remove item data. It leaves empty space.
+
+=>  It has check here.
 
 <br />
 
