@@ -1,6 +1,5 @@
 <div align="center">
     <h1>react-perfect-scrollbar-z</h1>
-    advertisement
     <br />
     <a href="https://codesandbox.io/s/react-perfect-scrollbar-z-8ikb5">LIVE EXAMPLE</a>
 </div>
@@ -11,9 +10,9 @@
 
 + It is wrap the <b>[perfect-scrollbar](https://github.com/mdbootstrap/perfect-scrollbar)</b> for the element.
 
-+ Auto update scrollbar, you don't have to do anything.
++ Auto update scrollbar (resize, change data), you don't have to do anything.
 
-+ Support for scroll-y for only the body of the table. (Hold header)
++ Support for scroll-y for only the body of the table. (Keep header)
 
 ---
 
@@ -24,10 +23,7 @@ npm install react-perfect-scrollbar-z
 
 Import the module in the place you want to use:
 ```js
-/*
-if you use perfect-scrollbar in many places you should import css in main file (override avoid)
-*/
-import 'react-perfect-scrollbar-z/build/styles.css';  // > ver 1.0.0
+import 'react-perfect-scrollbar-z/build/styles.css';
 
 import Scrollbar from 'react-perfect-scrollbar-z'
 ```
@@ -38,11 +34,11 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 ##### `simple`
 
 ```js
-        // tagName = 'div' wrapName='div'
-        // something1 (..any, showHide, data2, data3)
-        <Scrollbar height="100px" effectData={something1...}>
-            { something1...  }
-        </Scrollbar>
+    // tagName = 'div' wrapName='div'
+    // something1 (..any, showHide, data2, data3)
+    <Scrollbar height="100px" effectData={something1...}>
+        { something1...  }
+    </Scrollbar>
 ```
 
 <br />
@@ -50,18 +46,18 @@ import Scrollbar from 'react-perfect-scrollbar-z'
 ##### `special tagName (tbody, ul, dl, ol)`
 
 ```js
-        // const refScroll = useRef(null) // you handle scrollbars
-        <Scrollbar
-            tagName="tbody" // tbody, ul, dl, ol
-            maxHeight="400px"
-            className="list-group"
-            effectData={listData}
-            always
-            // onScrollY={evt => console.log(evt)}
-            // refScroll={refScroll}
-        >
-            { listData.map(item => <tr>...</tr>) }
-        </Scrollbar>
+    // const refScroll = useRef(null) // you handle scrollbars
+    <Scrollbar
+        tagName="tbody" // tbody, ul, dl, ol
+        maxHeight="400px"
+        className="list-group"
+        effectData={listData}
+        always
+        // onScrollY={evt => console.log(evt)}
+        // refScroll={refScroll}
+    >
+        { listData.map(item => <tr>...</tr>) }
+    </Scrollbar>
 ```
 
 ```js
@@ -108,13 +104,12 @@ refScroll.current.element.scrollTop = 0  || refScroll.current.update()
 
 + tbody only `scroll-y` (no x).  You should not use maxWidth, width (default by table).
 
-+ Update `scrollTop`, `scrollLeft`, using `refScroll` || `document.querySelector(#id).scrollTop = 0`
++ Update `scrollTop`, `scrollLeft`: using `refScroll`
 
 + `ul/ol/dl/tbody`. This is a special. (multi childs), so you shouldn't update the border for tagName.
 
 ```js
 <Scrollbar style={{ border: "1px solid" }} tagName="tbody" ... /> => no
-
 <parent style={{ border: "1px solid" }}> <Scrollbar tagName="tbody" ... /> </parent> => OK
 ```
 
@@ -123,17 +118,12 @@ refScroll.current.element.scrollTop = 0  || refScroll.current.update()
 <Scrollbar libTable={true}><CustomTag></CustomTag></Scrollbar>
 
 It will try to add the perfect scrollbar to the `tbody` of the `first` table found. (Checking...)
-
 ```
 
 + you should use `ul/dl/ol` with basic
 ```js
-    <Scrollbar effectData={abcd} .... > <ul> <for>...</for> </ul> <Scrollbar>
+<Scrollbar effectData={abcd} .... > <ul> <for>...</for> </ul> <Scrollbar>
 ```
-
-+ Some cases (or other lib) when you scroll to bottom and remove item data. It leaves empty space.
-
-=>  It has check here.
 
 <br />
 
