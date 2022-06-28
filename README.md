@@ -1,7 +1,7 @@
 <div align="center">
     <h1>react-perfect-scrollbar-z</h1>
     <br />
-    <a href="https://codesandbox.io/s/react-perfect-scrollbar-z-8ikb5">LIVE EXAMPLE</a>
+    <a href="https://codesandbox.io/s/8ikb5">LIVE EXAMPLE</a>
 </div>
 
 ---
@@ -129,7 +129,7 @@ It will try to add the perfect scrollbar to the `tbody` of the `first` table fou
 
 #### RUN
 
-<a href="https://codesandbox.io/s/react-perfect-scrollbar-z-8ikb5">LIVE EXAMPLE</a>
+<a href="https://codesandbox.io/u/delpi.k">LIVE EXAMPLE</a>
 
 ```js
 npm install
