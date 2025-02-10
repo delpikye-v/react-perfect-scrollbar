@@ -1,7 +1,7 @@
 {
   "name": "react-perfect-scrollbar-z",
-  "version": "1.2.3",
-  "description": "React Wrap Perfect Scrollbar (Hooks)",
+  "version": "2.2.2",
+  "description": "React-Wrap PerfectScrollbar (Hooks)",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
@@ -17,8 +17,7 @@
     "cb": "npm run clean && npm run build",
     "test:watch": "jest --watch",
     "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build",
-    "deploy": "npm publish --access public"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -37,7 +36,11 @@
     "react-perfect-scrollbar",
     "react-scrollbar-perfect",
     "react-scrollbar-custom",
-    "react-scrollbar"
+    "react-scrollbar",
+    "react-scrollbar-smooth",
+    "scrollbar-smooth",
+    "react-library",
+    "front-end"
   ],
   "author": "Delpi.Kye",
   "license": "MIT",
@@ -49,21 +52,24 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@types/jest": "^24.9.1",
-    "@types/react": "^16.14.14",
-    "@types/react-dom": "^16.9.14",
+    "@types/react": "17.0.20",
+    "@types/react-dom": "17.0.9",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "node-sass": "^5.0.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.3",
     "rollup-plugin-copy": "^3.4.0",
@@ -73,10 +79,11 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "sass-loader": "^10.2.0",
     "ts-jest": "^26.5.6",
+    "tslib": "^2.3.1",
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "@delpi/common": ">=0.0.10",
-    "perfect-scrollbar": ">=1.5.0"
+    "@delpi/common": ">=0.1.0",
+    "perfect-scrollbar": ">=1.5.6"
   }
 }
