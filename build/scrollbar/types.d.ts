@@ -30,9 +30,12 @@ export interface IFScrollbarTBodyProps extends IFSize, IFScrollFn {
     refScroll?: MutableRefObject<any>;
     triggerScrollClick?: boolean;
 }
-export interface IFScrollbarDataListProps extends IFSize, IFScrollFn, IFScrollbarTBodyProps {
+export interface IFScrollbarDataListProps extends IFScrollbarTBodyProps {
     tagName?: 'ul' | 'dl' | 'ol';
 }
 export interface IFScrollbarProps extends IFScrollbarTBodyProps {
-    forTableChildren?: boolean;
+    injectTable?: boolean;
+}
+export interface IFScrollProps extends IFScrollbarProps {
+    tagName?: string;
 }

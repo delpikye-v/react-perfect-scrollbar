@@ -1,6 +1,6 @@
 {
   "name": "react-perfect-scrollbar-z",
-  "version": "2.2.2",
+  "version": "2.2.4",
   "description": "React-Wrap PerfectScrollbar (Hooks)",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -16,7 +16,6 @@
     "build": "rollup -c",
     "cb": "npm run clean && npm run build",
     "test:watch": "jest --watch",
-    "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build"
   },
   "repository": {
